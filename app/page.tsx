@@ -1,28 +1,44 @@
-"use client"
+"use client";
 
-import React from 'react'
-import Navbar from '@/app/components/Navbar'
-import Skills from '@/app/components/Skills'
-import Projects from '@/app/components/Projects'
-import Resume from '@/app/components/Resume'
-import Home from '@/app/components/Home'
+import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
-export default function HomePage() {
+export default function LandingPage() {
+  const [input, setInput] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      router.push("/home");
+    }
+  };
+
   return (
-    <div className="scroll-smooth snap-y snap-mandatory h-screen overflow-scroll">
-      <Navbar />
-      <section id="home" className="snap-start h-screen">
-        <Home />
-      </section>
-      <section id="skills" className="snap-start h-screen">
-        <Skills />
-      </section>
-      <section id="projects" className="snap-start h-screen">
-        <Projects />
-      </section>
-      <section id="resume" className="snap-start h-screen">
-        <Resume />
-      </section>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-[length:300%_300%] animate-gradient rounded-sm bg-gray-50" />
+
+      <div className="relative z-10 w-[90%] max-w-3xl h-[500px] bg-gray-700 text-gray-300 font-mono rounded-lg shadow-lg p-10 text-xl flex flex-col justify-end border border-gray-600">
+        <div className="mb-4">
+          Welcome! Type anything and hit enter to see some cool stuff about me
+        </div>
+
+        <div className="inline-flex items-center">
+          <div className="mr-3 text-gray-400">visitor@johannestampere:~$</div>
+          <input
+            ref={inputRef}
+            className="bg-transparent outline-none text-gray-200 placeholder-gray-400 w-full max-w-md"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Type here..."
+          />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
