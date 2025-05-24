@@ -26,3 +26,6 @@ html, body {
     animation: gradientShift 10s ease infinite;
   }
   
+body {
+  @apply bg-[#EEF0F2] text-[#7c7e77];
+}
