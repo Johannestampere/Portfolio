@@ -26,7 +26,7 @@ export default function Landing(): JSX.Element {
 
         <div className="text-center md:text-left max-w-xl">
             <h1 className="text-5xl md:text-6xl mb-6">
-                <span className="font-light">Hello, I'm </span>
+                <span className="font-light">hey, I'm </span>
                 <span className="font-bold">Johannes</span>!
             </h1>
             <p className="text-xl leading-relaxed">
@@ -36,7 +36,7 @@ export default function Landing(): JSX.Element {
                 <span className="font-bold">machine learning</span>.
             </p>
             <p className="text-lg mt-4 text-[#555]">
-                Scroll down to learn more about me and ask the Chatbot tell you anything you wanna
+                scroll down to learn more about me and ask the Chatbot tell you anything you wanna
                 know about my LeetCode solutions &#128513;
             </p>
         </div>
