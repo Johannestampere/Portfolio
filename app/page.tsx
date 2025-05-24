@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Landing from './sections/landing'
 import Skills from './sections/skills'
 import Projects from './sections/projects'
 import About from './sections/about'
+import Navbar from './sections/navbar'
 
 const asciiLines = `
 ._______       __                                      _______                                       
@@ -19,21 +20,46 @@ const asciiLines = `
 
 export default function HomePage() {
   const [showLanding, setShowLanding] = useState(true)
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLanding(false)
-    }, 4000)
+    const timer = setTimeout(() => setShowLanding(false), 4000)
     return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const scrollTop = container.scrollTop
+      const scrollHeight = container.scrollHeight - container.clientHeight
+      const ratio = scrollTop / scrollHeight
+      setProgress(ratio)
+    }
+
+    container.addEventListener('scroll', handleScroll)
+    return () => container.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
     <motion.div
-      className="w-screen h-screen bg-[#EEF0F2] text-[#7c7e77] font-mono"
+      className="w-screen h-screen bg-[#EEF0F2] text-[#7c7e77] relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
     >
+      {!showLanding && (
+        <div className="absolute right-4 top-0 h-full w- bg-gray-300/30 rounded-full overflow-hidden z-50">
+          <div
+            className="bg-[#7c7e77] w-full rounded-full transition-all duration-200"
+            style={{ height: `${progress * 100}%` }}
+          />
+        </div>
+      )}
+      {!showLanding && <Navbar />}
+
       <AnimatePresence mode="wait">
         {showLanding ? (
           <motion.div
@@ -72,24 +98,17 @@ export default function HomePage() {
         ) : (
           <motion.main
             key="main"
+            ref={scrollRef}
             className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 2 }}
           >
-            <section className="h-screen snap-start">
-              <Landing />
-            </section>
-            <section className="h-screen snap-start">
-              <Skills />
-            </section>
-            <section className="h-screen snap-start">
-              <Projects />
-            </section>
-            <section className="h-screen snap-start">
-              <About />
-            </section>
+            <section id="landing" className="h-screen snap-start"><Landing /></section>
+            <section id="skills" className="h-screen snap-start"><Skills /></section>
+            <section id="projects" className="h-screen snap-start"><Projects /></section>
+            <section id="about" className="h-screen snap-start"><About /></section>
           </motion.main>
         )}
       </AnimatePresence>
