@@ -28,4 +28,7 @@ html, body {
   
 body {
   @apply bg-[#EEF0F2] text-[#7c7e77];
+  background-color: #EEF0F2;
+  opacity: 1;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #EEF0F2 7px ), repeating-linear-gradient( #dfdfe655, #dfdfe6 );
 }
