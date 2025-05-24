@@ -97,14 +97,9 @@ export default function HomePage() {
           </motion.div>
         ) : (
           <motion.main
-            key="main"
-            ref={scrollRef}
-            className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 2 }}
+            className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-transparent"
           >
+
             <section id="landing" className="h-screen snap-start"><Landing /></section>
             <section id="skills" className="h-screen snap-start"><Skills /></section>
             <section id="projects" className="h-screen snap-start"><Projects /></section>
