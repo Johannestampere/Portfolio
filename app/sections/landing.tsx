@@ -33,17 +33,12 @@ export default function Landing(): JSX.Element {
                 I'm a second-year Honours Computer Science student @ the University of Waterloo with experience in{' '}
                 <span className="font-bold">full-stack development</span>,{' '}
                 <span className="font-bold">data analysis</span>, and{' '}
-                <span className="font-bold">machine learning</span>.
+                <span className="font-bold">machine learning</span>
             </p>
             <p className="text-lg mt-4 text-[#555]">
-                scroll down to learn more about me and ask the Chatbot tell you anything you wanna
-                know about my LeetCode solutions &#128513;
+                scroll down to learn more about me and see how my DSA journey is going &#128513;
             </p>
         </div>
-
-
-
-
       </motion.div>
     </div>
   )
