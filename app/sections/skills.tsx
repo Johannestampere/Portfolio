@@ -9,9 +9,8 @@ const skills = [
     src: 'https://cdn.simpleicons.org/python/[ffde57]',
     bullets: [
       'Built an ML model for churn prediction',
-      'Used NumPy and pandas for analysis',
+      'Used NumPy and pandas for data analysis',
       'Used for competitive programming',
-      'Used for solving DSA problems'
     ],
   },
   {
@@ -27,73 +26,55 @@ const skills = [
     name: 'TypeScript',
     src: 'https://cdn.simpleicons.org/typescript/[#007ACC]',
     bullets: [
-      'Improved code safety in React apps',
-      'Used in full-stack Next.js projects',
     ],
   },
   {
     name: 'C',
     src: 'https://cdn.simpleicons.org/c/00599C',
     bullets: [
-      'Implemented various data structures for Waterloo Algorithms courses',
-      'Built a memory model from scratch',
-      'Solved DSA problems',
-      'Implemented abstract data types'
     ],
   },
   {
     name: 'C++',
     src: 'https://cdn.simpleicons.org/cplusplus/[#007ACC]',
     bullets: [
-      `Utilized for Waterloo's CS246 - Object-Oriented Software Development`,
-      'Solved various DSA problems',
     ],
   },
   {
     name: 'HTML5',
     src: 'https://cdn.simpleicons.org/html5/[#007ACC]',
     bullets: [
-      'Built static web pages',
-      'Used with CSS and JavaScript for frontend development',
     ],
   },
   {
     name: 'CSS3',
     src: 'https://cdn.simpleicons.org/css3/[#007ACC]',
     bullets: [
-      'Styled web pages',
-      'Used with HTML and JavaScript for frontend dev',
     ],
   },
   {
     name: 'React',
     src: 'https://cdn.simpleicons.org/react/[#007ACC]',
     bullets: [
-      'Used for frontend in various web applications',
-      'Integrated with Next.js for SSR',
+
     ],
   },
   {
     name: 'Next.js',
     src: 'https://cdn.simpleicons.org/nextdotjs/[#007ACC]',
     bullets: [
-      'Developed full-stack apps with SSR',
-      'Built this website, a full-stack linear algebra note-taking app, and the frontend for a collaborative productivity platform'
     ],
   },
   {
     name: 'Tailwind',
     src: 'https://cdn.simpleicons.org/tailwindcss/[#007ACC]',
     bullets: [
-      'Styled web pages'
     ],
   },
   {
     name: 'MongoDB',
     src: 'https://cdn.simpleicons.org/mongodb/[#007ACC]',
     bullets: [
-      'Utilized for data storage in multiple full-stack web apps',
-      'Used Mongoose for React integration',
     ],
   },
   {
@@ -115,7 +96,6 @@ const skills = [
     name: 'NumPy',
     src: 'https://cdn.simpleicons.org/numpy/[#007ACC]',
     bullets: [
-      'Used to collab on multiple projects'
     ],
   },
 
