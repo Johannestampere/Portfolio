@@ -48,7 +48,7 @@ export default function HomePage() {
       className="w-screen h-screen bg-[#EEF0F2] text-[#7c7e77] relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.2 }}
+      transition={{ duration: 0.5 }}
     >
       {!showLanding && (
         <div className="absolute right-4 top-0 h-full w- bg-gray-300/30 rounded-full overflow-hidden z-50">

@@ -33,7 +33,7 @@ const skills = [
   },
   {
     name: 'C',
-    src: 'https://cdn.simpleicons.org/c/red',
+    src: 'https://cdn.simpleicons.org/c/00599C',
     bullets: [
       'Implemented various data structures for Waterloo Algorithms courses',
       'Built a memory model from scratch',
@@ -111,7 +111,13 @@ const skills = [
       'Used to collab on multiple projects'
     ],
   },
-  
+  {
+    name: 'NumPy',
+    src: 'https://cdn.simpleicons.org/numpy/[#007ACC]',
+    bullets: [
+      'Used to collab on multiple projects'
+    ],
+  },
 
 ]
 
@@ -125,25 +131,21 @@ export default function Skills(): JSX.Element {
         viewport={{ once: false }}
         className="text-center max-w-6xl"
       >
-        <h1 className="text-6xl font-bold mb-16 py-20">tech stack</h1>
-        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-8">
+        <h1 className="text-6xl font-bold mb-16 py-20">so far I've worked with...</h1>
+        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-7 gap-14">
           {skills.map(({ name, src, bullets }) => (
             <div
               key={name}
               className="group relative flex flex-col items-center hover:scale-120 transition-transform duration-100"
             >
-              <div className="bg-white rounded-xl p-3 shadow-md">
-                <img height="100" width="100" src={src} alt={name} />
+              <div className="bg-white rounded-xl p-4 shadow-md">
+                <img height="120" width="120" src={src} alt={name} />
               </div>
 
-              <div className="absolute z-10 bottom-full mb-4 w-64 p-4 rounded-2xl bg-[#b6b8ba] text-[#4c4c4d] font-mono text-left text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="font-semibold text-base mb-2">{name}</div>
-                <ul className="list-disc pl-4 space-y-1">
-                  {bullets.map((point, index) => (
-                    <li key={index}>{point}</li>
-                  ))}
-                </ul>
+              <div className="absolute z-10 bottom-full mb-2 w-40 h-10 flex items-center justify-center p-1 rounded-xl bg-[#b6b8ba] text-[#4c4c4d] font-mono text-center text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none">
+                <div className="font-semibold text-white">{name}</div>
               </div>
+
             </div>
           ))}
         </div>
