@@ -36,7 +36,7 @@ export default function Landing(): JSX.Element {
                 <span className="font-bold">machine learning</span>
             </p>
             <p className="text-lg mt-4 text-[#555]">
-                scroll down to learn more about me and see how my DSA journey is going &#128513;
+                scroll down to learn more about me🚀
             </p>
         </div>
       </motion.div>

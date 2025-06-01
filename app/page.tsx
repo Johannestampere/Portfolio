@@ -71,7 +71,7 @@ export default function HomePage(): JSX.Element {
             className="h-screen flex items-center justify-center"
           >
             <motion.div
-              className="font-mono font-extrabold text-left whitespace-pre text-sm md:text-base leading-snug"
+              className="font-mono text-left whitespace-pre text-sm md:text-base leading-snug"
               variants={{
                 visible: { transition: { staggerChildren: 0.3 } },
                 hidden: {},
