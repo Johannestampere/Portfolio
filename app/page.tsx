@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { JSX, useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Landing from './sections/landing'
 import Skills from './sections/skills'
@@ -18,7 +18,7 @@ const asciiLines = `
  -------                                                 ---                                        
 `.trim().split('\n')
 
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   const [showLanding, setShowLanding] = useState(true)
   const scrollRef = useRef<HTMLDivElement>(null)
   const [progress, setProgress] = useState(0)
@@ -48,7 +48,7 @@ export default function HomePage() {
       className="w-screen h-screen bg-[#EEF0F2] text-[#7c7e77] relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 2 }}
     >
       {!showLanding && (
         <div className="absolute right-4 top-0 h-full w- bg-gray-300/30 rounded-full overflow-hidden z-50">
@@ -87,7 +87,7 @@ export default function HomePage() {
                   variants={{
                     hidden: { opacity: 0, y: 0 },
                     visible: { opacity: 1, y: 0 },
-                    exit: { opacity: 0, x: 100, transition: { duration: 0.4 } },
+                    exit: { opacity: 0, x: 100, transition: { duration: 0.6 } },
                   }}
                 >
                   {line}

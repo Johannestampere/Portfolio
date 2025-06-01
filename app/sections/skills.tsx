@@ -111,7 +111,7 @@ export default function Skills(): JSX.Element {
         viewport={{ once: false }}
         className="text-center max-w-6xl"
       >
-        <h1 className="text-6xl font-bold mb-16 py-20">so far I've worked with...</h1>
+        <h1 className="text-4xl font-bold mb-16 py-20">so far I've worked with...</h1>
         <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-7 gap-14">
           {skills.map(({ name, src, bullets }) => (
             <div
