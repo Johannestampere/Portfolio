@@ -164,14 +164,14 @@ export default function Landing(): JSX.Element {
               <button
                 aria-label="Previous project"
                 onClick={handlePrev}
-                className="bg-black text-white rounded-full p-6 shadow-lg focus:outline-none focus:ring-0 transition text-5xl flex items-center justify-center border-2 border-white hover:border-gray-400"
+                className="bg-black text-white rounded-full p-6 shadow-lg focus:outline-none focus:ring-0 transition text-5xl flex items-center justify-center border-2 border-white hover:border-gray-400 transition-transform duration-200 hover:scale-110"
               >
                 <svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
                   <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
                 </svg>
               </button>
               <div className="mx-8 w-full flex justify-center mt-8">
-                <div className="bg-black border-4 border-white rounded-3xl shadow-2xl p-10 w-[340px] md:w-[420px] min-h-[220px] flex flex-col items-center justify-center">
+                <div className="bg-black border-4 border-white rounded-3xl shadow-2xl p-10 w-[340px] md:w-[420px] min-h-[220px] flex flex-col items-center justify-center transition-all duration-200 hover:scale-105">
                   <a href={projects[currentProject].link} className="text-2xl font-extrabold text-white hover:underline mb-4 text-center">
                     {projects[currentProject].name}
                   </a>
@@ -186,7 +186,7 @@ export default function Landing(): JSX.Element {
               <button
                 aria-label="Next project"
                 onClick={handleNext}
-                className="bg-black text-white rounded-full p-6 shadow-lg focus:outline-none focus:ring-0 transition text-5xl flex items-center justify-center border-2 border-white hover:border-gray-400"
+                className="bg-black text-white rounded-full p-6 shadow-lg focus:outline-none focus:ring-0 transition text-5xl flex items-center justify-center border-2 border-white hover:border-gray-400 transition-transform duration-200 hover:scale-110"
               >
                 <svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
                   <path strokeLinecap='round' strokeLinejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
