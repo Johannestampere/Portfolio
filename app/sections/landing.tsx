@@ -7,19 +7,19 @@ import { JSX, useState } from 'react'
 const projects = [
   {
     name: '136Notes',
-    description: `Lightweight visual note-taking app for linear algebra students with dynamic graphs and LaTeX`,
+    description: `Solo-developed a lightweight intuitive note-taking app for visual linear algebra learners with dynamic graphs and LaTeX`,
     skills: ['Next.js', 'MongoDB', 'Tailwind CSS', 'Flask', 'OAuth', 'Three.js', 'MathJax', 'Mongoose'],
     link: '#',
   },
   {
     name: 'MindBloom',
-    description: `Developer a collaborative brainstorming platform that helps hackathon teams and startups turn scattered thoughts into clear directions via dynamic mindmaps and AI-guided suggestions`,
+    description: `Co-developed a collaborative brainstorming platform that helps hackathon teams and startups turn scattered thoughts into clear directions via dynamic mindmaps and AI-guided suggestions`,
     skills: ['Next.js', 'TypeScript', 'FastAPI', 'OpenAI API', 'Zustand', 'D3.js', 'Supabase', 'PostgreSQL'],
     link: '#',
   },
   {
     name: 'Real-time Arduino Emotion Detector',
-    description: `Maps a person's specific emotion to specific LED lights on an Arduino board using a pre-trained detection model, OpenCV, and C++`,
+    description: `Built a real-time emotion detection system that uses OpenCV and a pre-trained model to classify facial expressions, then maps them to LED colors on an Arduino board via PySerial and C++`,
     skills: ['Python', 'OpenCV', 'PySerial', 'C++', 'Arduino'],
     link: '#',
   },
@@ -64,19 +64,19 @@ export default function Landing(): JSX.Element {
   }
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center px-4 py-8 bg-gradient-to-br from-black via-[#18181b] to-black text-white relative">
-      <div className="fixed top-6 right-8 z-50 flex gap-5 items-center">
+    <div className="min-h-screen w-full flex items-center justify-center px-3 py-6 bg-gradient-to-br from-black via-[#18181b] to-black text-white relative">
+      <div className="fixed top-4 right-6 z-50 flex gap-3 items-center">
         <a
           href="https://github.com/Johannestampere"
           target="_blank"
           rel="noopener noreferrer"
           onMouseEnter={() => setisHoveredGithub(true)}
           onMouseLeave={() => setisHoveredGithub(false)}
-          className="transition-transform duration-200 hover:scale-110"
+          className="transition-transform duration-100 hover:scale-130"
         >
           <img
-            height="40"
-            width="40"
+            height="28"
+            width="28"
             src={`https://cdn.simpleicons.org/github/${isHoveredGithub ? 'fff' : 'bdbdbd'}`}
             alt="GitHub"
           />
@@ -87,11 +87,11 @@ export default function Landing(): JSX.Element {
           rel="noopener noreferrer"
           onMouseEnter={() => setisHoveredLeetcode(true)}
           onMouseLeave={() => setisHoveredLeetcode(false)}
-          className="transition-transform duration-200 hover:scale-110"
+          className="transition-transform duration-100 hover:scale-130"
         >
           <img
-            height="40"
-            width="40"
+            height="28"
+            width="28"
             src={`https://cdn.simpleicons.org/leetcode/${isHoveredLeetcode ? 'fff' : 'bdbdbd'}`}
             alt="LeetCode"
           />
@@ -102,12 +102,12 @@ export default function Landing(): JSX.Element {
           rel="noopener noreferrer"
           onMouseEnter={() => setLinkedinHovered(true)}
           onMouseLeave={() => setLinkedinHovered(false)}
-          className="transition-transform duration-200 hover:scale-110"
+          className="transition-transform duration-100 hover:scale-130"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
+            width="28"
+            height="28"
             fill={linkedinHovered ? '#fff' : '#bdbdbd'}
             viewBox="0 0 16 16"
           >
@@ -115,12 +115,12 @@ export default function Landing(): JSX.Element {
           </svg>
         </a>
       </div>
-      <div className="fixed top-6 left-8 z-50">
+      <div className="fixed top-4 left-6 z-50">
         <a
           href="/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-5 py-2 bg-white text-black rounded-lg shadow hover:bg-[#bdbdbd] transition font-bold text-base border border-white"
+          className="inline-block px-3 py-1 bg-transparent text-white rounded-lg shadow hover:bg-[#bdbdbd] transition font-bold text-sm border border-white"
         >
           View Resume
         </a>
@@ -130,55 +130,61 @@ export default function Landing(): JSX.Element {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: false }}
-        className="max-w-7xl w-full flex flex-col gap-20 py-16"
+        className="max-w-5xl w-full flex flex-col gap-12 py-8"
       >
-        <div className="flex flex-col md:flex-row gap-16 w-full">
-          {/* Profile Section */}
+        <div className="flex flex-col md:flex-row gap-10 w-full">
           <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left transition-all duration-300 cursor-pointer">
-            <div className="w-[180px] h-[180px] mb-6">
+            <div className="w-[120px] h-[120px] mb-4">
               <Image
                 src="/pic.jpg"
                 alt="Johannes Tampere"
-                width={180}
-                height={180}
-                className="rounded-full shadow-xl object-cover border-4 border-[#23242a]"
+                width={120}
+                height={120}
+                className="rounded-full shadow-xl object-cover border-3 border-[#23242a]"
               />
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white">Johannes Tampere</h1>
-            <p className="text-3xl text-[#bdbdbd] mb-8">Honours Computer Science @ <a href="https://cs.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="text-[#AF9164] hover:underline font-bold">University of Waterloo</a></p>
-            <ul className="mb-10 space-y-4 text-left">
-              <li className="flex items-center text-2xl md:text-3xl font-bold">
-                <span className="inline-block w-6 h-6 rounded-full bg-white mr-4"></span>
+            <h1 className="text-3xl md:text-5xl font-extrabold mt-3 mb-4 text-white">Johannes Tampere</h1>
+            <p className="text-lg text-[#bdbdbd] mb-6">Honours Computer Science @ <a href="https://cs.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="text-[#AF9164] hover:underline font-bold">University of Waterloo</a></p>
+            <ul className="mb-8 space-y-3 text-left">
+              <li className="flex items-center text-lg md:text-xl font-bold transition-all duration-200 hover:scale-110">
+                <span className="inline-block w-4 h-4 rounded-full bg-white mr-3"></span>
                 full-stack development
               </li>
-              <li className="flex items-center text-2xl md:text-3xl font-bold">
-                <span className="inline-block w-6 h-6 rounded-full bg-white mr-4"></span>
-                prev data analysis intern @&nbsp;
-                <span className="text-[#0060bf]">Delfi</span>
+              <li className="flex items-center text-lg md:text-xl font-bold transition-all duration-200 hover:scale-110">
+                <span className="inline-block w-4 h-4 rounded-full bg-white mr-3"></span>
+                prev data analysis intern @ Delfi
+              </li>
+              <li className="flex items-center text-lg md:text-xl font-bold transition-all duration-200 hover:scale-110">
+                <span className="inline-block w-4 h-4 rounded-full bg-white mr-3"></span>
+                enthusiastic about ML
+              </li>
+              <li className="flex items-center text-lg md:text-xl font-bold transition-all duration-200 hover:scale-110">
+                <span className="inline-block w-4 h-4 rounded-full bg-white mr-3"></span>
+                won DeltaHacks 2025
               </li>
             </ul>
           </div>
           <div className="flex-1 flex flex-col items-center w-full transition-all duration-300 cursor-pointer">
-            <h2 className="text-5xl font-extrabold mb-12 text-white text-center">Projects</h2>
-            <div className="flex items-center justify-center w-full gap-8 flex-col md:flex-row">
+            <h2 className="text-3xl font-extrabold mb-8 text-white text-center">Projects</h2>
+            <div className="flex items-center justify-center w-full gap-6 flex-col md:flex-row">
               <button
                 aria-label="Previous project"
                 onClick={handlePrev}
-                className="bg-black text-white rounded-full p-6 shadow-lg focus:outline-none focus:ring-0 transition text-5xl flex items-center justify-center border-2 border-white hover:border-gray-400 transition-transform duration-200 hover:scale-110"
+                className="bg-black text-white rounded-full p-4 shadow-lg focus:outline-none focus:ring-0 transition text-3xl flex items-center justify-center border-2 border-white hover:border-gray-400 transition-transform duration-200 hover:scale-110 cursor-pointer"
               >
-                <svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
                   <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
                 </svg>
               </button>
-              <div className="mx-8 w-full flex justify-center mt-8">
-                <div className="bg-black border-4 border-white rounded-3xl shadow-2xl p-10 w-[340px] md:w-[420px] min-h-[220px] flex flex-col items-center justify-center transition-all duration-200 hover:scale-105">
-                  <a href={projects[currentProject].link} className="text-2xl font-extrabold text-white hover:underline mb-4 text-center">
+              <div className="mx-6 w-full flex justify-center mt-6">
+                <div className="bg-black border-3 border-white rounded-2xl shadow-2xl p-6 w-[280px] md:w-[320px] min-h-[160px] flex flex-col items-center justify-center transition-all duration-200 hover:scale-105">
+                  <a href={projects[currentProject].link} target="_blank" rel="noopener noreferrer" className="text-xl font-extrabold text-white hover:underline mb-3 text-center">
                     {projects[currentProject].name}
                   </a>
-                  <p className="text-[#bdbdbd] text-lg text-center mb-4">{projects[currentProject].description}</p>
-                  <div className="flex flex-wrap gap-2 justify-center mt-2">
+                  <p className="text-[#bdbdbd] text-sm text-center mb-3">{projects[currentProject].description}</p>
+                  <div className="flex flex-wrap gap-1 justify-center mt-2">
                     {projects[currentProject].skills && projects[currentProject].skills.map((skill) => (
-                      <span key={skill} className="bg-black text-white px-3 py-1 rounded-full text-sm font-bold shadow border-2 border-[#fff]">{skill}</span>
+                      <span key={skill} className="bg-black text-white px-2 py-1 rounded-full text-xs font-bold shadow border border-[#fff]">{skill}</span>
                     ))}
                   </div>
                 </div>
@@ -186,26 +192,23 @@ export default function Landing(): JSX.Element {
               <button
                 aria-label="Next project"
                 onClick={handleNext}
-                className="bg-black text-white rounded-full p-6 shadow-lg focus:outline-none focus:ring-0 transition text-5xl flex items-center justify-center border-2 border-white hover:border-gray-400 transition-transform duration-200 hover:scale-110"
+                className="bg-black text-white rounded-full p-4 shadow-lg focus:outline-none focus:ring-0 transition text-3xl flex items-center justify-center border-2 border-white hover:border-gray-400 transition-transform duration-200 hover:scale-110 cursor-pointer"
               >
-                <svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
                   <path strokeLinecap='round' strokeLinejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
                 </svg>
               </button>
             </div>
-            <div className="mt-6 flex justify-center w-full">
-              <span className="text-[#bdbdbd] text-3xl font-bold">{currentProject + 1} / {totalProjects}</span>
-            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center md:items-start w-full mt-10 transition-all duration-300 cursor-pointer">
-          <h2 className="text-5xl font-extrabold mb-6 text-white">Tech Stack</h2>
+        <div className="flex flex-col items-center md:items-start w-full mt-8 transition-all duration-300 cursor-pointer">
+          <h2 className="text-3xl font-extrabold mb-4 text-white">Tech Stack</h2>
           {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category} className="mb-4 w-full">
-              <h3 className="text-2xl mb-2 text-gray-300">{category}</h3>
+            <div key={category} className="mb-3 w-full">
+              <h3 className="text-lg mb-2 text-gray-300">{category}</h3>
               <ul className="flex flex-wrap gap-2">
                 {skillList.map((skill) => (
-                  <li key={skill} className="bg-black text-white px-4 py-2 rounded-full text-base font-bold shadow border-2 border-[#fff] transition-all duration-200 hover:scale-130 hover:bg-[#18181b]">
+                  <li key={skill} className="bg-black text-white px-3 py-1 rounded-full text-sm font-bold shadow border border-[#fff] transition-all duration-200 hover:scale-130 hover:bg-[#18181b]">
                     {skill}
                   </li>
                 ))}
