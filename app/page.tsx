@@ -6,10 +6,25 @@ import { JSX, useState, useEffect } from 'react'
 
 const projects = [
   {
+    name: "Donor3",
+    description: "Solo-developed Donor3, an AI-powered charity platform that revolutionizes donating by making it as easy as texting a friend (submission for SolutionHacks 2025)",
+    skills: ['Next.js', 'TypeScript', 'Django', 'SQLite', 'Gemini API'],
+    link: '#',
+    image: '/donor3.png',
+  },
+  {
+    name: "GuardiaAI",
+    description: "Led development of GuardiaAI, a Chrome Extension that protects the elderly from potential online scams and fraud in real-time (submission for SpurHacks 2025)",
+    skills: ['React.js', 'Gemini API', 'Node.js', "Express.js", "Google TTS API"],
+    link: "#",
+    image: "/guardia.png"
+  },
+  {
     name: '136Notes',
-    description: `Solo-developed a lightweight intuitive note-taking app for visual linear algebra learners with dynamic graphs and LaTeX`,
+    description: `Solo-developed a lightweight intuitive note-taking app for visual linear algebra learners with dynamic graphs and LaTeX equations`,
     skills: ['Next.js', 'MongoDB', 'Tailwind CSS', 'Flask', 'OAuth', 'Three.js', 'MathJax', 'Mongoose'],
     link: '#',
+    image: "/136notes.png"
   },
   {
     name: 'MindBloom',
@@ -39,13 +54,13 @@ const projects = [
 
 const skills = {
   'Languages': [
-    'Python', 'TypeScript', 'JavaScript', 'C', 'C++', 'Markdown', 'LaTeX', 'HTML5', 'CSS3'
+    'Python', 'TypeScript', 'JavaScript', 'C', 'C++', 'HTML', 'CSS', 'Bash'
   ],
   'Frameworks & Libraries': [
-    'React.js', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'FastAPI', 'Pandas', 'Numpy', 'Scikit-learn', 'Zustand', 'Supabase', 'Mongoose', 'OpenAI API'
+    'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'FastAPI', 'Pandas', 'Numpy', 'Scikit-learn', 'Zustand', 'Django', 'Mongoose', 'OpenAI API'
   ],
   'Developer Tools': [
-    'Git', 'MongoDB', 'VS Code', 'PySerial', 'Arduino', 'OAuth', 'Vim', 'Figma', 'Jupyter Notebook', 'AWS'
+    'Git', 'MySQL', 'MongoDB', 'NPM', 'Supabase', 'AWS', 'Docker', 'RESTful APIs', 'Jira'
   ]
 }
 
@@ -81,11 +96,11 @@ const themes = [
   {
     name: 'Peach & Sage',
     bg: '#FCD0A1',
-    text: '#B1B695',
-    cardBg: '#B1B695',
+    text: '#7A8B5A',
+    cardBg: '#7A8B5A',
     cardText: '#FCD0A1',
-    border: '#B1B695',
-    accent: '#B1B695',
+    border: '#7A8B5A',
+    accent: '#7A8B5A',
   },
   {
     name: 'Ivory & Red',
@@ -99,8 +114,6 @@ const themes = [
 ]
 
 export default function Landing(): JSX.Element {
-  const [currentProject, setCurrentProject] = useState(0)
-  const totalProjects = projects.length
   const [isHoveredGithub, setisHoveredGithub] = useState(false)
   const [linkedinHovered, setLinkedinHovered] = useState(false)
   const [isHoveredLeetcode, setisHoveredLeetcode] = useState(false)
@@ -118,12 +131,7 @@ export default function Landing(): JSX.Element {
     }
   }, [themeIndex])
 
-  const handlePrev = () => {
-    setCurrentProject((prev) => (prev - 1 + totalProjects) % totalProjects)
-  }
-  const handleNext = () => {
-    setCurrentProject((prev) => (prev + 1) % totalProjects)
-  }
+
 
   const theme = themes[themeIndex]
 
@@ -161,7 +169,7 @@ export default function Landing(): JSX.Element {
           />
         </a>
         <a
-          href="https://www.linkedin.com/in/johannestampere"
+          href="https://www.linkedin.com/in/johannes-tampere/"
           target="_blank"
           rel="noopener noreferrer"
           onMouseEnter={() => setLinkedinHovered(true)}
@@ -194,77 +202,77 @@ export default function Landing(): JSX.Element {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: false }}
-        className="max-w-5xl w-full flex flex-col gap-12 py-8"
+        className="max-w-5xl w-full flex flex-col gap-12 py-8 mt-16"
       >
-        <div className="flex flex-col md:flex-row gap-10 w-full">
+        <div className="flex flex-col md:flex-row gap-20 w-full">
           <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left transition-all duration-300 cursor-pointer">
-            <div className="w-[120px] h-[120px] mb-4">
+            <div className="w-[150px] h-[150px] mb-4">
               <Image
                 src="/pic.jpg"
                 alt="Johannes Tampere"
-                width={120}
-                height={120}
+                width={150}
+                height={150}
                 className={`rounded-full shadow-xl object-cover border-3 ${theme.border}`}
               />
             </div>
-            <h1 className={`text-3xl md:text-5xl font-extrabold mt-3 mb-4 ${theme.text}`}>Johannes Tampere</h1>
-            <p className={`text-lg mb-6 ${theme.text}`}>Honours Computer Science @ <a href="https://cs.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className={`hover:underline font-bold ${theme.accent}`}>University of Waterloo</a></p>
+            <h1 className={`text-3xl md:text-6xl font-extrabold mt-3 mb-5 ${theme.text}`}>Johannes Tampere</h1>
+
             <ul className="mb-8 space-y-3 text-left">
-              <li className={`flex items-center text-lg md:text-xl transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> full-stack development </li>
-              <li className={`flex items-center text-lg md:text-xl transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> prev data analysis intern @ Delfi </li>
-              <li className={`flex items-center text-lg md:text-xl transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> enthusiastic about ML </li>
-              <li className={`flex items-center text-lg md:text-xl transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> won DeltaHacks 2025 </li>
+            <li className={`flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span>honours CS @ UWaterloo</li>
+              <li className={`flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> full-stack developer + builder </li>
+              <li className={`flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> prev data analysis intern @ Delfi </li>
+              <li className={`flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> ambitious about ML and AI </li>
+              <li className={`flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110 ${theme.text} hover:text-${theme.accent}`}> <span className={`inline-block w-4 h-4 rounded-full mr-3`} style={{ background: theme.text }}></span> love to ball and go to the gym </li>
             </ul>
           </div>
-          <div className="flex-1 flex flex-col items-center w-full transition-all duration-300 cursor-pointer">
-            <h2 className={`text-3xl font-extrabold mb-8 text-center ${theme.text}`}>Projects</h2>
-            <div className="flex items-center justify-center w-full gap-6 flex-col md:flex-row">
-              <button
-                aria-label="Previous project"
-                onClick={handlePrev}
-                className={`rounded-full p-4 shadow-lg focus:outline-none focus:ring-0 transition text-3xl flex items-center justify-center border-2 transition-transform duration-100 hover:scale-110 cursor-pointer ${theme.text} border-${theme.border} hover:bg-${theme.border} hover:text-${theme.text} hover:border-${theme.border}`}
-              >
-                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
-                  <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
-                </svg>
-              </button>
-              <div className="mx-6 w-full flex justify-center mt-6">
-                <div className={`rounded-2xl shadow-2xl p-6 w-[280px] md:w-[320px] min-h-[160px] flex flex-col items-center justify-center transition-all duration-200 hover:scale-105 border-3 ${theme.text} border-${theme.border}`}>
-                  <a href={projects[currentProject].link} target="_blank" rel="noopener noreferrer" className={`text-xl font-extrabold mb-3 text-center hover:underline ${theme.text} hover:text-${theme.accent}`}>
-                    {projects[currentProject].name}
+          <div className="flex-1 flex flex-col items-center md:items-start justify-center w-full transition-all duration-300 cursor-pointer">
+            <h2 className={`text-3xl font-extrabold mb-4 mt-45 ${theme.text}`}>Tech Stack</h2>
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div key={category} className="mb-3 w-full">
+                <h3 className={`text-lg mb-2 ${theme.text}`}>{category}</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {skillList.map((skill) => (
+                    <li key={skill} className={`px-2 py-0.5 rounded-full text-xs font-bold shadow border transition-all duration-100   hover:scale-115 ${theme.text} border-${theme.border} hover:bg-${theme.accent} hover:text-${theme.accent}`}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col items-center w-full transition-all duration-300 cursor-pointer">
+          <h2 className={`text-4xl font-extrabold mb-8 mt-10 text-center ${theme.text}`}>Projects</h2>
+          <div className="w-full space-y-4">
+            {projects.map((project, index) => (
+              <div key={index} className={`rounded-[5px] shadow-2xl p-8 w-full transition-all duration-200 hover:scale-105 border-1 ${theme.text} border-${theme.border} flex gap-8 min-h-48`}>
+                <div className="flex-1">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className={`text-2xl font-extrabold mb-6 block hover:underline ${theme.text} hover:text-${theme.accent}`}>
+                    {project.name}
                   </a>
-                  <p className={`text-sm text-center mb-3 ${theme.text}`}>{projects[currentProject].description}</p>
-                  <div className="flex flex-wrap gap-1 justify-center mt-2">
-                    {projects[currentProject].skills && projects[currentProject].skills.map((skill) => (
-                      <span key={skill} className={`px-2 py-1 rounded-full text-xs font-bold shadow border transition ${theme.text} border-${theme.border} hover:bg-${theme.accent} hover:text-${theme.accent}`}>{skill}</span>
+                  <p className={`text-base mb-6 ${theme.text}`}>{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {project.skills && project.skills.map((skill) => (
+                      <span key={skill} className={`px-3 py-1 rounded-full text-sm font-bold shadow border transition ${theme.text} border-${theme.border} hover:bg-${theme.accent} hover:text-${theme.accent}`}>{skill}</span>
                     ))}
                   </div>
                 </div>
+                <div className="w-80 h-48 flex-shrink-0">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={`${project.name} screenshot`}
+                      width={256}
+                      height={160}
+                      className={`w-full h-full`}
+                    />
+                  ) : (
+                    <div className={`w-full h-full rounded-[5px] border-1 ${theme.border} bg-gray-200 flex items-center justify-center`}>
+                      <span className={`text-base ${theme.text} opacity-50`}>Photo</span>
+                    </div>
+                  )}
+                </div>
               </div>
-              <button
-                aria-label="Next project"
-                onClick={handleNext}
-                className={`rounded-full p-4 shadow-lg focus:outline-none focus:ring-0 transition text-3xl flex items-center justify-center border-2 transition-transform duration-100 hover:scale-110 cursor-pointer ${theme.text} border-${theme.border} hover:bg-${theme.border} hover:text-${theme.text} hover:border-${theme.border}`}
-              >
-                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='3'>
-                  <path strokeLinecap='round' strokeLinejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
-                </svg>
-              </button>
-            </div>
+            ))}
           </div>
-        </div>
-        <div className="flex flex-col items-center md:items-start w-full mt-8 transition-all duration-300 cursor-pointer">
-          <h2 className={`text-3xl font-extrabold mb-4 ${theme.text}`}>Tech Stack</h2>
-          {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category} className="mb-3 w-full">
-              <h3 className={`text-lg mb-2 ${theme.text}`}>{category}</h3>
-              <ul className="flex flex-wrap gap-2">
-                {skillList.map((skill) => (
-                  <li key={skill} className={`px-2 py-0.5 rounded-full text-xs font-bold shadow border transition-all duration-200 hover:scale-130 ${theme.text} border-${theme.border} hover:bg-${theme.accent} hover:text-${theme.accent}`}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
       </motion.div>
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end"
