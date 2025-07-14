@@ -26,9 +26,19 @@ html, body {
     animation: gradientShift 10s ease infinite;
   }
   
+/* Peach & Sage Theme - Default */
+body {
+  @apply bg-[#FCD0A1] text-[#7A8B5A];
+  background-color: #FCD0A1;
+  opacity: 1;
+  background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #FCD0A1 7px ), repeating-linear-gradient( #7A8B5A15, #7A8B5A10 );
+}
+
+/* Original theme - commented out for future use
 body {
   @apply bg-[#EEF0F2] text-[#7c7e77];
   background-color: #EEF0F2;
   opacity: 1;
   background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #EEF0F2 7px ), repeating-linear-gradient( #dfdfe655, #dfdfe6 );
 }
+*/

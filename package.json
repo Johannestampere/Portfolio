@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "export": "next export",
+    "lint": "next lint",
+    "build:static": "next build && next export"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.832.0",
