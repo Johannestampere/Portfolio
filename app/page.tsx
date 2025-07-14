@@ -7,7 +7,7 @@ import { JSX, useState, useEffect } from 'react'
 const projects = [
   {
     name: "Donor3",
-    description: "Solo-developed Donor3, an AI-powered charity platform that revolutionizes donating by making it as easy as texting a friend (submission for SolutionHacks 2025)",
+    description: "Built Donor3, an AI-powered charity platform that revolutionizes donating by making it as easy as texting a friend (submission for SolutionHacks 2025)",
     skills: ['Next.js', 'TypeScript', 'Django', 'SQLite', 'Gemini API'],
     link: 'https://github.com/Johannestampere/Donor3',
     image: '/donor3.png',
