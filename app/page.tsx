@@ -3,38 +3,42 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { JSX, useState } from 'react'
+import * as React from "react"
 
 const projects = [
   {
+    name: "johannestampere.com",
+    description: "Portfolio website",
+    skills: ["Next.js", "TypeScript", "Tailwind CSS", "AWS", "Github Actions", "Framer Motion"],
+    link: "https://github.com/Johannestampere/Portfolio",
+  },
+  {
     name: "Donor3",
-    description: "Built Donor3, an AI-powered charity platform that revolutionizes donating by making it as easy as texting a friend (submission for SolutionHacks 2025)",
+    description: "AI-powered charity platform that revolutionizes donating (submission for SolutionHacks 2025)",
     skills: ['Next.js', 'TypeScript', 'Django', 'SQLite', 'Gemini API'],
     link: 'https://github.com/Johannestampere/Donor3',
-    image: '/donor3.png',
   },
   {
     name: "GuardiaAI",
-    description: "Led development of GuardiaAI, a Chrome Extension that protects the elderly from potential online scams and fraud in real-time (submission for SpurHacks 2025)",
-    skills: ['React.js', 'Gemini API', 'Node.js', "Express.js", "Google TTS API"],
+    description: "Chrome Extension that protects the elderly from potential online scams and fraud in real-time (submission for SpurHacks 2025)",
+    skills: ['React.js', 'Gemini API', 'Node.js', "Express.js", "Google TTS API", "Chrome Extensions API"],
     link: "https://github.com/Johannestampere/GuardiaAI",
-    image: "/guardia.png"
   },
   {
     name: '136Notes',
-    description: `Solo-developed a lightweight intuitive note-taking app for visual linear algebra learners with dynamic graphs and LaTeX equations`,
+    description: `Lightweight note-taking app for visual linear algebra learners with dynamic graphs and LaTeX equations`,
     skills: ['Next.js', 'MongoDB', 'Tailwind CSS', 'Flask', 'OAuth', 'Three.js', 'MathJax', 'Mongoose'],
-    link: 'https://github.com/Johannestampere/136Notes',
-    image: "/136notes.png"
+    link: 'https://github.com/Johannestampere/136Notes'
   },
   {
     name: 'MindBloom',
-    description: `Co-developed a collaborative brainstorming platform that helps hackathon teams and startups turn scattered thoughts into clear directions via dynamic mindmaps and AI-guided suggestions`,
-    skills: ['Next.js', 'TypeScript', 'FastAPI', 'OpenAI API', 'Zustand', 'D3.js', 'Supabase', 'PostgreSQL'],
+    description: `Collaborative brainstorming platform that helps hackathon teams and startups turn scattered thoughts into clear directions via dynamic mindmaps and AI-guided suggestions`,
+    skills: ['Next.js', 'TypeScript', 'FastAPI', 'OpenAI API', 'Zustand', 'Supabase', 'PostgreSQL', 'Vercel', 'AWS', 'Docker'],
     link: 'https://github.com/Johannestampere/mindmap',
   },
   {
     name: 'Real-time Arduino Emotion Detector',
-    description: `Built a real-time emotion detection system that uses OpenCV and a pre-trained model to classify facial expressions, then maps them to LED colors on an Arduino board via PySerial and C++`,
+    description: `Real-time emotion detection system that uses OpenCV and a pre-trained model to classify facial expressions, then maps them to LED colors on an Arduino board via PySerial and C++`,
     skills: ['Python', 'OpenCV', 'PySerial', 'C++', 'Arduino'],
     link: 'https://github.com/Johannestampere/ArduinoEmotionDetector',
   },
@@ -54,13 +58,13 @@ const projects = [
 
 const skills = {
   'Languages': [
-    'Python', 'TypeScript', 'JavaScript', 'C', 'C++', 'HTML', 'CSS'
+    'Python', 'TypeScript', 'JavaScript', 'C', 'C++', 'HTML', 'CSS', 'SQL', 'Bash'
   ],
   'Frameworks & Libraries': [
     'React', 'Next.js', 'Node', 'Express.js', 'FastAPI', 'Django', 'Flask', 'Pandas', 'Numpy', 'Zustand'
   ],
   'Technologies': [
-    'Git', 'MySQL', 'MongoDB', 'NPM', 'Supabase', 'AWS', 'Docker', 'REST APIs', 'Jira', 'Github Actions'
+    'Git', 'Github Actions', 'AWS', 'Docker', 'Vercel', 'NPM', 'REST APIs', 'Supabase', 'MongoDB', 'MySQL'
   ]
 }
 
@@ -217,10 +221,10 @@ export default function Landing(): JSX.Element {
 
             <ul className="mb-8 space-y-3 text-left">
             <li className="flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110" style={{ color: theme.text }}> <span className="inline-block w-4 h-4 rounded-full mr-3" style={{ background: theme.text }}></span>honours CS @ UWaterloo</li>
-              <li className="flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110" style={{ color: theme.text }}> <span className="inline-block w-4 h-4 rounded-full mr-3" style={{ background: theme.text }}></span> full-stack developer & builder </li>
+              <li className="flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110" style={{ color: theme.text }}> <span className="inline-block w-4 h-4 rounded-full mr-3" style={{ background: theme.text }}></span> full-stack dev</li>
               <li className="flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110" style={{ color: theme.text }}> <span className="inline-block w-4 h-4 rounded-full mr-3" style={{ background: theme.text }}></span> prev data analysis intern @ Delfi </li>
               <li className="flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110" style={{ color: theme.text }}> <span className="inline-block w-4 h-4 rounded-full mr-3" style={{ background: theme.text }}></span> ambitious about ML, cloud, and devops </li>
-              <li className="flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110" style={{ color: theme.text }}> <span className="inline-block w-4 h-4 rounded-full mr-3" style={{ background: theme.text }}></span> love the gym and basketball </li>
+              <li className="flex items-center text-lg md:text-[12pt] transition-all duration-100 hover:scale-110" style={{ color: theme.text }}> <span className="inline-block w-4 h-4 rounded-full mr-3" style={{ background: theme.text }}></span> love building cool stuff and going to the gym</li>
               
             </ul>
           </div>
