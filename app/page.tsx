@@ -258,17 +258,6 @@ export default function Landing(): JSX.Element {
                     ))}
                   </div>
                 </div>
-                {project.image && (
-                  <div className="w-80 h-48 flex-shrink-0">
-                    <Image
-                      src={project.image}
-                      alt={`${project.name} screenshot`}
-                      width={256}
-                      height={160}
-                      className="w-full h-full"
-                    />
-                  </div>
-                )}
               </div>
             ))}
           </div>
