@@ -1,34 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+
 import { Raleway, Quicksand, Forum, Lato, Inter } from 'next/font/google';
-import { JSX, useState } from 'react'
+import { JSX } from 'react'
 import * as React from "react"
 
 const latonormal = Lato({
   weight: '300',
+  subsets: ["latin"]
 })
 
 const latobold = Lato({
-  weight: '400'
-})
-
-const raleway = Raleway({
   weight: '400',
-  subsets: ['latin'],
+  subsets: ["latin"]
 })
-
-const inter = Inter({
-  weight: '400'
-})
-
-const quicksand = Quicksand()
-
-const forum = Forum({
-  weight: '400',
-})
-
 
 export default function Landing(): JSX.Element {
   return (
