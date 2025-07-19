@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-import { Raleway, Quicksand, Forum, Lato, Inter } from 'next/font/google';
+import { Lato } from 'next/font/google';
 import { JSX } from 'react'
 import * as React from "react"
 
@@ -27,8 +26,8 @@ export default function Landing(): JSX.Element {
         className=' z-50 flex w-full flex-col items-start gap-8 px-4 pt-32 pb-48 text-md  md:w-3/4 lg:w-1/2'
       >
         <section className='flex flex-col gap-6'>
-          <div className={`${latobold.className} text-base`}>Hey, I'm Johannes.</div>
-          <div className={`${latonormal.className}`}>I'm a software engineer from Estonia, currently located in Canada. I'm currently studying computer science at the University of Waterloo. I'm really into backend development, devops, and machine learning.</div>
+          <div className={`${latobold.className} text-base`}>Hey, I&#39;m Johannes.</div>
+          <div className={`${latonormal.className}`}>I&#39;m a software engineer from Estonia, currently located in Canada. I&#39;m currently studying computer science at the University of Waterloo. I&#39;m really into backend development, devops, and machine learning.</div>
           <div className={`${latonormal.className}`}>I love attending hackathons, working on cool impactful projects with cool people, talking to anyone talented, and playing sports.</div>
         </section>
 
