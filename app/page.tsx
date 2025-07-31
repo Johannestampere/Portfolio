@@ -23,9 +23,24 @@ export default function Landing(): JSX.Element {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: false }}
-        className=' z-50 flex w-full flex-col items-start gap-8 px-4 pt-32 pb-48 text-md  md:w-3/4 lg:w-1/2'
+        className=' z-50 flex w-full flex-col items-start gap-8 px-4 pt-16 pb-48 text-md  md:w-3/4 lg:w-1/2'
       >
-        <section className='flex flex-col gap-6'>
+
+        <section className='flex flex-col w-full items-center'>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <a href='https://cs.uwatering.com/#https://johannestampere.com?nav=prev'>←</a>
+                    <a href='https://cs.uwatering.com/#https://johannestampere.com' target='_blank'>
+                        <img
+                            src='https://cs.uwatering.com/icon.black.svg'
+                            alt='CS Webring'
+                            style={{ width: '24px', height: 'auto', opacity: 0.8 }}
+                        />
+                    </a>
+                    <a href='https://cs.uwatering.com/#https://johannestampere.com?nav=next'>→</a>
+                  </div>
+        </section>
+
+        <section className='flex flex-col gap-6 pt-16'>
           <div className={`${latobold.className} text-base`}>Hey, I&#39;m Johannes.</div>
           <div className={`${latonormal.className}`}>I&#39;m an aspiring software engineer from Estonia, currently studying 2nd-year computer science at the University of Waterloo in Canada.</div>
           <div className={`${latonormal.className}`}>I have experience in frontend development (React, TypeScript, Tailwind CSS), backend development (Node.js/Express, Flask, Django), and DevOps (AWS, Docker, Vercel). I&#39;m passionate about machine learning, AI, and building scalable systems.</div>
@@ -101,7 +116,7 @@ export default function Landing(): JSX.Element {
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>136Notes</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>February 2025</p>
-                <p className={`${latonormal.className} text-accent-foreground`}>Lightweight note-taking web-app for linear algebra students.</p>
+                <p className={`${latonormal.className} text-accent-foreground`}>Lightweight note-taking platform for linear algebra students.</p>
               </div>
             </a>
 
@@ -125,6 +140,7 @@ export default function Landing(): JSX.Element {
             </a>
           </div>
         </section>
+
       </motion.div>
     </div>
   )
