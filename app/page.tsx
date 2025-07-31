@@ -27,8 +27,9 @@ export default function Landing(): JSX.Element {
       >
         <section className='flex flex-col gap-6'>
           <div className={`${latobold.className} text-base`}>Hey, I&#39;m Johannes.</div>
-          <div className={`${latonormal.className}`}>I&#39;m a software engineer born in Estonia and currently located in Canada. At the moment, I&#39;m studying 2nd-year computer science at the University of Waterloo. I&#39;m into backend development, devops, and machine learning.</div>
-          <div className={`${latonormal.className}`}>I love attending hackathons, working on cool impactful projects with cool people, talking to anyone with the same interests as me, and playing sports. Hit me up if you have any questions!</div>
+          <div className={`${latonormal.className}`}>I&#39;m an aspiring software engineer from Estonia, currently studying 2nd-year computer science at the University of Waterloo in Canada.</div>
+          <div className={`${latonormal.className}`}>I have experience in frontend development (React, TypeScript, Tailwind CSS), backend development (Node.js/Express, Flask, Django), and DevOps (AWS, Docker, Vercel). I'm passionate about machine learning, AI, and building scalable systems.</div>
+          <div className={`${latonormal.className}`}>I love attending hackathons, working on meaningful projects with awesome teams, and connecting with people who share my interests. I'm also into sports and always up for a good conversation, so feel free to reach out!</div>
         </section>
 
         <section className='flex flex-col gap-6 w-full'>
@@ -36,7 +37,7 @@ export default function Landing(): JSX.Element {
           <div className='flex w-full flex-col gap-2'>
             <a href='https://github.com/Johannestampere/Donor3' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-50 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>Donor3</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>June 2025 — Present</p>
@@ -46,7 +47,7 @@ export default function Landing(): JSX.Element {
             
             <a href='https://github.com/Johannestampere/mindmap' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-50 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>MindBloom</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>May 2025 — Present</p>
@@ -56,7 +57,7 @@ export default function Landing(): JSX.Element {
 
             <a href='https://github.com/Johannestampere/Portfolio' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-50 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>johannestampere.com</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>July 2025</p>
@@ -66,7 +67,7 @@ export default function Landing(): JSX.Element {
 
             <a href='https://github.com/Johannestampere/GuardiaAI' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-50 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>GuardiaAI</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>June 2025</p>
@@ -76,7 +77,7 @@ export default function Landing(): JSX.Element {
 
             <a href='https://github.com/Johannestampere/ArduinoEmotionDetector' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-50 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>LED Emotion Mapper</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>April 2025</p>
@@ -86,7 +87,7 @@ export default function Landing(): JSX.Element {
 
             <a href='https://github.com/Johannestampere/CMalloc' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-50 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>Manual Memory Management</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>March 2025</p>
@@ -96,7 +97,7 @@ export default function Landing(): JSX.Element {
 
             <a href='https://github.com/Johannestampere/136Notes' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-50 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
               <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>136Notes</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>February 2025</p>
