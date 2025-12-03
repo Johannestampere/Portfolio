@@ -50,6 +50,26 @@ export default function Landing(): JSX.Element {
         <section className='flex flex-col gap-6 w-full'>
           <h1 className={`${latobold.className} text-xl`}>Projects</h1>
           <div className='flex w-full flex-col gap-2'>
+          <a href='https://github.com/Johannestampere/order_book_simulator' 
+              className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
+                <h2 className={`${latobold.className} text-accent-foreground font-bold`}>Order Book Simulator</h2>
+                <p className={`${latonormal.className} text-accent-foreground`}>December 2025</p>
+                <p className={`${latonormal.className} text-accent-foreground`}>High-performance, cache-optimized C++ order matching engine.</p>
+              </div>
+            </a>
+
+            <a href='https://github.com/Johannestampere/softmax' 
+              className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
+                <h2 className={`${latobold.className} text-accent-foreground font-bold`}>C++ Softmax Regression</h2>
+                <p className={`${latonormal.className} text-accent-foreground`}>November 2025</p>
+                <p className={`${latonormal.className} text-accent-foreground`}>High-performance Softmax Regression in C++ with a custom matrix library, AVX2/FMA SIMD acceleration, and mini-batch gradient descent.</p>
+              </div>
+            </a>
+
             <a href='https://github.com/Johannestampere/Donor3' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
               <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
