@@ -42,10 +42,10 @@ export default function Landing(): JSX.Element {
 
         <section className='flex flex-col gap-6 pt-16'>
           <div className={`${latobold.className} text-base text-xl`}>Hey, I&#39;m Johannes!</div>
-          <div className={`${latonormal.className}`}>I&#39;m an undergraduate Computer Science student at the <span className={`${latobold.className}`}>University of Waterloo</span>, and a full-stack engineer at <span className={`${latobold.className}`}>ScamGuardian.ai</span>, where I'm creating scalable anti-scam software.</div>
+          <div className={`${latonormal.className}`}>I&#39;m an undergraduate Computer Science student at the <span className={`${latobold.className}`}>University of Waterloo</span>, and a full-stack engineer at <span className={`${latobold.className}`}>ScamGuardian.ai</span>, where I&#39;m creating scalable anti-scam software.</div>
           <div className={`${latonormal.className}`}>My mainly used languages are Python, C/C++, TypeScript/JavaScript, Ruby, and SQL.</div>
           <div className={`${latonormal.className}`}>My favorite technologies & tools include React, Next.js, Node.js, FastAPI, PostgreSQL, Redis, Docker, AWS, REST APIs, WebSockets, Tailwind CSS, Postman.</div>
-          <div className={`${latonormal.className}`}>I love creating stuff that's fun and has real-world impact.</div>
+          <div className={`${latonormal.className}`}>I love creating stuff that&#39;s fun and has real-world impact.</div>
         </section>
 
         <section className='flex flex-col gap-6 w-full my-8'>
