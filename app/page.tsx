@@ -41,15 +41,37 @@ export default function Landing(): JSX.Element {
         </section>
 
         <section className='flex flex-col gap-6 pt-16'>
-          <div className={`${latobold.className} text-base`}>Hey, I&#39;m Johannes.</div>
-          <div className={`${latonormal.className}`}>I&#39;m an undergraduate Computer Science student at the University of Waterloo in Canada. At the moment, I&#39;m doing full-stack development at ScamGuardian.ai, mostly working with TypeScript, FastAPI, and cloud services.</div>
-          <div className={`${latonormal.className}`}>I have experience in frontend development (React, TypeScript, JavaScript, Tailwind CSS), backend development (Node.js/Express, Flask, Django, FastAPI), and DevOps (AWS, Docker, Vercel). I&#39;m passionate about ML, AI, and building scalable systems.</div>
-          <div className={`${latonormal.className}`}>I love hackathons, math, random side project, and sports. Hit me up if you want to chat!</div>
+          <div className={`${latobold.className} text-base text-xl`}>Hey, I&#39;m Johannes!</div>
+          <div className={`${latonormal.className}`}>I&#39;m an undergraduate Computer Science student at the <span className={`${latobold.className}`}>University of Waterloo</span>, and a full-stack engineer at <span className={`${latobold.className}`}>ScamGuardian.ai</span>, where I'm creating scalable anti-scam software.</div>
+          <div className={`${latonormal.className}`}>My mainly used languages are Python, C/C++, TypeScript/JavaScript, Ruby, and SQL.</div>
+          <div className={`${latonormal.className}`}>My favorite technologies & tools include React, Next.js, Node.js, FastAPI, PostgreSQL, Redis, Docker, AWS, REST APIs, WebSockets, Tailwind CSS, Postman.</div>
+          <div className={`${latonormal.className}`}>I love creating stuff that's fun and has real-world impact.</div>
         </section>
 
-        <section className='flex flex-col gap-6 w-full'>
-          <h1 className={`${latobold.className} text-xl`}>Projects</h1>
+        <section className='flex flex-col gap-6 w-full my-8'>
+          <h1 className={`${latobold.className} text-xl`}>Most recent projects</h1>
           <div className='flex w-full flex-col gap-2'>
+
+          <a href='https://github.com/Johannestampere/uw-hot-takes' 
+            className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
+            <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+            <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
+              <h2 className={`${latobold.className} text-accent-foreground font-bold`}>UW Hot Takes</h2>
+              <p className={`${latonormal.className} text-accent-foreground`}>January 2026</p>
+              <p className={`${latonormal.className} text-accent-foreground`}>Anonymous platform for UW students to share hot takes and engage with others.</p>
+            </div>
+          </a>
+
+          <a href='https://github.com/Johannestampere/bloom.ai' 
+              className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
+              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
+              <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
+                <h2 className={`${latobold.className} text-accent-foreground font-bold`}>bloom.ai</h2>
+                <p className={`${latonormal.className} text-accent-foreground`}>December 2025</p>
+                <p className={`${latonormal.className} text-accent-foreground`}>AI-powered real-time collaborative mindmapping platform.</p>
+              </div>
+            </a>
+          
           <a href='https://github.com/Johannestampere/order_book_simulator' 
               className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
               <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
@@ -77,16 +99,6 @@ export default function Landing(): JSX.Element {
                 <h2 className={`${latobold.className} text-accent-foreground font-bold`}>Donor3</h2>
                 <p className={`${latonormal.className} text-accent-foreground`}>June 2025 — Present</p>
                 <p className={`${latonormal.className} text-accent-foreground`}>Charity platform that revolutionizes donating using AI.</p>
-              </div>
-            </a>
-            
-            <a href='https://github.com/Johannestampere/mindmap' 
-              className='block relative w-full rounded-lg p-5 transition-all duration-150 ease-in-out group z-50 backdrop-blur-md'>
-              <div className='absolute inset-0 bg-gradient-to-r from-[#f7fff7] to-[#f0fff0] opacity-0 group-hover:opacity-75 transition-opacity duration-150 ease-in-out rounded-lg backdrop-blur-lg'></div>
-              <div className='relative flex flex-col items-start justify-start gap-2 text-md'>
-                <h2 className={`${latobold.className} text-accent-foreground font-bold`}>MindBloom</h2>
-                <p className={`${latonormal.className} text-accent-foreground`}>May 2025 — Present</p>
-                <p className={`${latonormal.className} text-accent-foreground`}>AI-powered intelligent mindmapping platform.</p>
               </div>
             </a>
 
