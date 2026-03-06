@@ -8,5 +8,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #fcf8f0;
+  background-color: #292828ff;
+  cursor: url('/mouse.svg') 24 24, auto;
 }
