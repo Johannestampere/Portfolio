@@ -7,7 +7,6 @@ const cinzel = Cinzel({ subsets: ['latin'], weight: '400' })
 const lato = Lato({ subsets: ['latin'], weight: '300' })
 
 import { CREAM, BG } from '../lib/constants'
-export { CREAM, BG }
 
 export default function Landing() {
   return (
@@ -114,8 +113,6 @@ export default function Landing() {
             <span>FULL-STACK ENGINEER</span>
             <span style={{ opacity: 0.4 }}>·</span>
             <span>AI / ML</span>
-            <span style={{ opacity: 0.4 }}>·</span>
-            <span>BUILDING</span>
           </div>
         </div>
 
