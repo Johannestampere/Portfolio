@@ -1,0 +1,31 @@
+---
+title: "Building PicCraft: Photo to Minecraft Pipeline"
+date: "2026-03-06"
+tags: ["AI", "Computer Vision", "Minecraft"]
+---
+
+## The Idea
+
+I wanted to answer a simple question: what if Minecraft could see your world? Take a photo on your phone, and watch it reconstruct itself in-game — progressively, in three stages.
+
+## The Three Stages
+
+PicCraft builds in-world in three passes, each replacing the last:
+
+**Stage 0 — Mosaic (~5s):** The image is dithered and mapped to the closest Minecraft block colors, producing a 2D pixel art billboard. Fast, imperfect, immediately satisfying.
+
+**Stage 1 — Depth 3D (~30s):** Depth Anything V2 generates a per-pixel depth map. The image is extruded into a voxel relief — flat areas stay flat, foreground subjects pop out toward you.
+
+**Stage 2 — Tripo 3D (~90s):** The subject is passed to the Tripo AI API, which generates a full 3D mesh. That mesh is voxelized into blocks and placed in-world, replacing the relief.
+
+## The Stack
+
+The web app is vanilla HTML/JS deployed on Vercel. The backend is Python + FastAPI + Celery + Redis, running in Docker. The Minecraft side is a Paper 1.21.4 plugin written in Java that polls the backend and places each stage tick-safely as it completes.
+
+The AI pipeline chains together segment-anything for subject isolation, Depth Anything V2 for monocular depth estimation, and the Tripo API for mesh generation.
+
+## What I Learned
+
+Voxelizing an arbitrary 3D mesh into Minecraft blocks is harder than it sounds. The mesh comes out of Tripo at an arbitrary scale and orientation, and you need to ray-march through the voxel grid testing each block position against the mesh surface. Getting the coordinate systems aligned between the mesh exporter, the voxelizer, and the Minecraft world took longer than the entire rest of the project.
+
+The Celery + Redis task queue turned out to be the right call. Each stage is an independent task, so the plugin can poll for completion and place blocks as soon as each stage finishes — without blocking on the slower stages.

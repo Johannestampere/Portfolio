@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Cinzel } from 'next/font/google'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { remark } from 'remark'
+import remarkHtml from 'remark-html'
 import { getArticle, getAllArticles } from '../../../lib/articles'
 import { BG, CREAM } from '../../../lib/constants'
 
@@ -13,6 +14,7 @@ export async function generateStaticParams() {
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const { meta, content } = getArticle(slug)
+  const html = (await remark().use(remarkHtml).process(content)).toString()
 
   return (
     <div style={{ backgroundColor: BG, minHeight: '100vh', color: CREAM }}>
@@ -79,9 +81,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           .mdx-content a { color: ${CREAM}; text-decoration: underline; opacity: 0.7; }
           .mdx-content hr { border: none; border-top: 1px solid rgba(242,234,216,0.15); margin: 2rem 0; }
         `}</style>
-        <div className="mdx-content">
-          <MDXRemote source={content} />
-        </div>
+        <div className="mdx-content" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </div>
   )
