@@ -4,8 +4,6 @@ date: "2026-03-06"
 tags: ["AI", "Computer Vision", "Minecraft"]
 ---
 
-# Building PicCraft: Photo to Minecraft Pipeline
-
 We’ve all had those periods where we play Minecraft with friends every day for two or three weeks, and then suddenly stop and don’t touch the game again for six months. I miss those phases, so I decided to build something for Minecraft.
 
 I wanted to build something that actually interests me and aligns with stuff I’m trying to improve in, so I decided to make a pipeline that ingests an image from your phone, transforms it to a 3D model, and places it in front of you in your Minecraft world. 
@@ -30,7 +28,7 @@ For the tech stack, I decided to use:
 
 Below is a diagram of the final stage data pipeline:
 
-![Blank diagram (1).png](Building%20PicCraft%20Photo%20to%20Minecraft%20Pipeline/Blank_diagram_(1).png)
+![Blank diagram (1).png](/articles/piccraft/pipeline-diagram.png)
 
 ### 1) Take photo on your camera
 
@@ -76,6 +74,6 @@ My first approach was to map each pixel to the closest block color. In practice,
 
 To fix this, PicCraft first selects a subset of block colors that best match the image’s overall palette. The image is then quantized using [**Floyd-Steinberg dithering**](https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering), which is a technique used to reduce the color palette of an image.
 
-![image.png](Building%20PicCraft%20Photo%20to%20Minecraft%20Pipeline/image.png)
+![image.png](/articles/piccraft/dithering.png)
 
 Using this, I was able to produce significantly better and more accurate results.
