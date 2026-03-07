@@ -4,28 +4,78 @@ date: "2026-03-06"
 tags: ["AI", "Computer Vision", "Minecraft"]
 ---
 
-## The Idea
+# Building PicCraft: Photo to Minecraft Pipeline
 
-I wanted to answer a simple question: what if Minecraft could see your world? Take a photo on your phone, and watch it reconstruct itself in-game — progressively, in three stages.
+We’ve all had those periods where we play Minecraft with friends every day for two or three weeks, and then suddenly stop and don’t touch the game again for six months. I miss those phases, so I decided to build something for Minecraft.
 
-## The Three Stages
+I wanted to build something that actually interests me and aligns with stuff I’m trying to improve in, so I decided to make a pipeline that ingests an image from your phone, transforms it to a 3D model, and places it in front of you in your Minecraft world. 
 
-PicCraft builds in-world in three passes, each replacing the last:
+I decided to call it **PicCraft**.
 
-**Stage 0 — Mosaic (~5s):** The image is dithered and mapped to the closest Minecraft block colors, producing a 2D pixel art billboard. Fast, imperfect, immediately satisfying.
+## Technology used
 
-**Stage 1 — Depth 3D (~30s):** Depth Anything V2 generates a per-pixel depth map. The image is extruded into a voxel relief — flat areas stay flat, foreground subjects pop out toward you.
+PicCraft is built as a multi-stage pipeline combining computer vision, 3D reconstruction, and a custom Minecraft server plugin.
 
-**Stage 2 — Tripo 3D (~90s):** The subject is passed to the Tripo AI API, which generates a full 3D mesh. That mesh is voxelized into blocks and placed in-world, replacing the relief.
+For the tech stack, I decided to use:
 
-## The Stack
+- **Python & FastAPI** for the backend
+- **Redis/Celery** for the worker system
+- **Java/Paper** for the custom server plugin
+- **Docker/Vercel/ngrok** for hosting
+- **Tripo AI** for 3D model generation
+- **SAM** for subject extraction
+- **Depth Anything V2** - depth estimation
 
-The web app is vanilla HTML/JS deployed on Vercel. The backend is Python + FastAPI + Celery + Redis, running in Docker. The Minecraft side is a Paper 1.21.4 plugin written in Java that polls the backend and places each stage tick-safely as it completes.
+## The pipeline
 
-The AI pipeline chains together segment-anything for subject isolation, Depth Anything V2 for monocular depth estimation, and the Tripo API for mesh generation.
+Below is a diagram of the final stage data pipeline:
 
-## What I Learned
+![Blank diagram (1).png](Building%20PicCraft%20Photo%20to%20Minecraft%20Pipeline/Blank_diagram_(1).png)
 
-Voxelizing an arbitrary 3D mesh into Minecraft blocks is harder than it sounds. The mesh comes out of Tripo at an arbitrary scale and orientation, and you need to ray-march through the voxel grid testing each block position against the mesh surface. Getting the coordinate systems aligned between the mesh exporter, the voxelizer, and the Minecraft world took longer than the entire rest of the project.
+### 1) Take photo on your camera
 
-The Celery + Redis task queue turned out to be the right call. Each stage is an independent task, so the plugin can poll for completion and place blocks as soon as each stage finishes — without blocking on the slower stages.
+Browser camera captures a JPEG and uploads it to backend via an ngrok tunnel
+
+### 2) Subject extraction
+
+SAM model detects the foreground object, removes the background, and outputs a transparent PNG cutout
+
+### 3) 3D model generation
+
+Tripo AI receives the cutout image and generates a fully textured 3D mesh (.glb)
+
+### 4) Voxelization
+
+The mesh is loaded with trimesh, scaled to a $64^3$ grid, surface-sampled for color, solid-filled, and each voxel is assigned the averaged RGB of its nearest surface point
+
+### 5) Minecraft block mapping
+
+Each voxel’s RGB colors are converted to LAB color space and matched against the Minecraft block palette using minimum Euclidean distance
+
+### 6) In-game placement
+
+The Paper plugin polls the backend, computes placement origin from the player’s position and facing direction, then places the blocks in batches of 200 per tick to keep the server lag-free
+
+## Challenges
+
+Two parts turned out to be particularly tricky: placing large builds safely in Minecraft, and producing good-looking colors with a limited block palette.
+
+### Tick-safe block placement
+
+Minecraft runs almost all game logic on a single main thread that updates at 20 ticks per second. If too many blocks are placed at once, the server stalls.
+
+A $64^3$ build can contain tens of thousands of blocks, so placing the entire build at once will crash the server.
+
+To avoid this, my plugin uses a batched placement system. Instead of placing everything at once, the build is spread across multiple ticks with a fixed number of blocks per tick. This allows the build to gradually appear in the world without lag.
+
+### Color mapping
+
+This was the biggest challenge. The colors looked awful most of the time. Minecraft has a limited block palette, so this was a hard fix.
+
+My first approach was to map each pixel to the closest block color. In practice, this produces flat and inaccurate results because many colors simply dont exist in Minecraft.
+
+To fix this, PicCraft first selects a subset of block colors that best match the image’s overall palette. The image is then quantized using [**Floyd-Steinberg dithering**](https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering), which is a technique used to reduce the color palette of an image.
+
+![image.png](Building%20PicCraft%20Photo%20to%20Minecraft%20Pipeline/image.png)
+
+Using this, I was able to produce significantly better and more accurate results.
