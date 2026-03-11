@@ -54,7 +54,7 @@ export default function Articles() {
                 >
                   {article.title}
                 </div>
-                <div style={{ opacity: 0.45, fontSize: '11px', letterSpacing: '2px' }}>
+                <div style={{ opacity: 0.2, fontSize: '11px', letterSpacing: '2px' }}>
                   {article.date}
                   {article.tags && (
                     <span style={{ marginLeft: '1rem' }}>{article.tags.join(' · ')}</span>

@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import { Cinzel } from 'next/font/google'
 import { remark } from 'remark'
-import remarkHtml from 'remark-html'
+import remarkMath from 'remark-math'
+import remarkRehype from 'remark-rehype'
+import rehypeKatex from 'rehype-katex'
+import rehypeRaw from 'rehype-raw'
+import rehypeStringify from 'rehype-stringify'
 import { getArticle, getAllArticles } from '../../../lib/articles'
 import { BG, CREAM } from '../../../lib/constants'
 
@@ -14,7 +18,13 @@ export async function generateStaticParams() {
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const { meta, content } = getArticle(slug)
-  const html = (await remark().use(remarkHtml).process(content)).toString()
+  const html = (await remark()
+    .use(remarkMath)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeKatex)
+    .use(rehypeStringify)
+    .process(content)).toString()
 
   return (
     <div style={{ backgroundColor: BG, minHeight: '100vh', color: CREAM }}>
@@ -55,7 +65,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           .mdx-content p { margin: 0 0 0.75rem; }
           .mdx-content strong { font-weight: 600; }
           .mdx-content em { font-style: italic; }
-          .mdx-content ul, .mdx-content ol { padding-left: 1.5rem; margin: 0 0 0.75rem; }
+          .mdx-content ul { list-style-type: disc; padding-left: 1.5rem; margin: 0 0 0.75rem; }
+          .mdx-content ol { list-style-type: decimal; padding-left: 1.5rem; margin: 0 0 0.75rem; }
           .mdx-content li { margin-bottom: 0.2rem; }
           .mdx-content code {
             font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", monospace;

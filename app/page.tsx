@@ -19,13 +19,13 @@ export default function Landing() {
         position: 'absolute',
         left: '2%',
         bottom: 0,
-        height: '80vh',
+        height: '100vh',
         zIndex: 1,
       }}>
         <img
           src="/adobe.png"
           alt=""
-          style={{ height: '100%', width: 'auto', mixBlendMode: 'multiply', opacity: 0.2 }}
+          style={{ height: '100%', width: 'auto', opacity: 1.0 }}
         />
       </div>
 
@@ -34,13 +34,13 @@ export default function Landing() {
         position: 'absolute',
         right: '2%',
         bottom: 0,
-        height: '80vh',
+        height: '100vh',
         zIndex: 1,
       }}>
         <img
           src="/adobe.png"
           alt=""
-          style={{ height: '100%', width: 'auto', mixBlendMode: 'multiply', opacity: 0.2 }}
+          style={{ height: '100%', width: 'auto', opacity: 1.011 }}
         />
       </div>
 
@@ -92,11 +92,11 @@ export default function Landing() {
           {/* Name */}
           <div style={{
             color: CREAM,
-            fontSize: '52px',
-            letterSpacing: '8px',
-            fontFamily: cinzel.style.fontFamily,
+            fontSize: '72px',
+            letterSpacing: '4px',
+            fontFamily: 'XanasWedding, serif',
           }}>
-            JOHANNES TAMPERE
+            johannes tampere
           </div>
 
           {/* Bullet Points */}
