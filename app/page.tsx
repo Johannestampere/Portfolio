@@ -42,21 +42,11 @@ export default function Landing() {
 
         {/* UWatering webring */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <a
-            href="https://cs.uwatering.com/#https://johannestampere.com?nav=prev"
-            style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '13px' }}
-          >←</a>
+          <a href="https://cs.uwatering.com/#https://johannestampere.com?nav=prev" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '13px' }}>←</a>
           <a href="https://cs.uwatering.com/#https://johannestampere.com" target="_blank">
-            <img
-              src="https://cs.uwatering.com/icon.black.svg"
-              alt="CS Webring"
-              style={{ width: '16px', height: 'auto', opacity: 0.45 }}
-            />
+            <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" style={{ width: '16px', height: 'auto', opacity: 0.45 }} />
           </a>
-          <a
-            href="https://cs.uwatering.com/#https://johannestampere.com?nav=next"
-            style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '13px' }}
-          >→</a>
+          <a href="https://cs.uwatering.com/#https://johannestampere.com?nav=next" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '13px' }}>→</a>
         </div>
 
         {/* Grid */}
