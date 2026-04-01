@@ -108,7 +108,7 @@ export default function Projects() {
           </h1>
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {projects.map((project, i) => (
+            {projects.map((project) => (
               <a
                 key={project.name}
                 href={project.url}

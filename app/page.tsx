@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Linkedin, Instagram, Mail } from 'lucide-react'
 
 export default function Landing() {
@@ -44,7 +45,7 @@ export default function Landing() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <a href="https://cs.uwatering.com/#https://johannestampere.com?nav=prev" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '13px' }}>←</a>
           <a href="https://cs.uwatering.com/#https://johannestampere.com" target="_blank">
-            <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" style={{ width: '16px', height: 'auto', opacity: 0.45 }} />
+            <Image src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" width={16} height={16} style={{ opacity: 0.45 }} />
           </a>
           <a href="https://cs.uwatering.com/#https://johannestampere.com?nav=next" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '13px' }}>→</a>
         </div>
