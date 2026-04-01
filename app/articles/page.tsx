@@ -1,70 +1,84 @@
 import Link from 'next/link'
-import { Cinzel, Lato } from 'next/font/google'
-import { BG, CREAM } from '../../lib/constants'
 import { getAllArticles } from '../../lib/articles'
-
-const cinzel = Cinzel({ subsets: ['latin'], weight: '400' })
-const lato = Lato({ subsets: ['latin'], weight: '300' })
 
 export default function Articles() {
   const articles = getAllArticles()
 
   return (
-    <div className={lato.className} style={{ backgroundColor: BG, minHeight: '100vh', color: CREAM }}>
-      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '3rem 2rem' }}>
-        <Link
-          href="/"
-          style={{ color: CREAM, opacity: 0.5, letterSpacing: '3px', fontSize: '11px', textDecoration: 'none' }}
-        >
+    <main style={{
+      position: 'relative',
+      zIndex: 2,
+      minHeight: '100vh',
+      padding: '40px 24px 80px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '28px',
+    }}>
+      <div style={{ width: 'min(720px, 100%)' }}>
+
+        <Link href="/" style={{
+          color: 'var(--muted)',
+          fontSize: '11px',
+          letterSpacing: '3px',
+          textDecoration: 'none',
+          display: 'inline-block',
+          marginBottom: '28px',
+        }}>
           ← BACK
         </Link>
 
-        <h1
-          className={cinzel.className}
-          style={{ marginTop: '3rem', marginBottom: '3rem', letterSpacing: '6px', fontSize: '26px', fontWeight: 400 }}
-        >
-         ARTICLES
-        </h1>
+        <div className="glass-card">
+          <h1 style={{
+            margin: '0 0 28px',
+            fontSize: '13px',
+            letterSpacing: '6px',
+            fontWeight: 400,
+            color: 'var(--text)',
+          }}>
+            ARTICLES
+          </h1>
 
-        <style>{`
-          .article-title { font-size: 14px; transition: font-size 0.2s ease; }
-          .article-link:hover .article-title { font-size: 16px; }
-        `}</style>
-
-        {articles.length === 0 ? (
-          <p style={{ opacity: 0.4, fontSize: '13px', letterSpacing: '2px' }}>COMING SOON</p>
-        ) : (
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {articles.map((article, i) => (
-              <Link
-                key={article.slug}
-                href={`/articles/${article.slug}`}
-                className="article-link"
-                style={{
-                  color: CREAM,
-                  textDecoration: 'none',
-                  borderBottom: '1px solid rgba(242,234,216,0.1)',
-                  padding: '1.5rem 0',
-                  borderTop: i === 0 ? '1px solid rgba(242,234,216,0.1)' : 'none',
-                }}
-              >
-                <div
-                  className={`${cinzel.className} article-title`}
-                  style={{ letterSpacing: '2px', marginBottom: '0.4rem' }}
+          {articles.length === 0 ? (
+            <p style={{ fontSize: '11px', letterSpacing: '2px', color: 'var(--muted)', opacity: 0.6 }}>
+              COMING SOON
+            </p>
+          ) : (
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {articles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/articles/${article.slug}`}
+                  style={{
+                    color: 'var(--text)',
+                    textDecoration: 'none',
+                    padding: '1.25rem 0',
+                    borderTop: '1px solid rgba(36,50,58,0.08)',
+                    transition: 'padding-left 0.2s ease',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.paddingLeft = '8px'
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.paddingLeft = '0'
+                  }}
                 >
-                  {article.title}
-                </div>
-                <div style={{ opacity: 0.2, fontSize: '11px', letterSpacing: '2px' }}>
-                  {article.date}
-                  {article.tags && (
-                    <span style={{ marginLeft: '1rem' }}>{article.tags.join(' · ')}</span>
-                  )}
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
+                  <div style={{ fontSize: '14px', fontWeight: 500, marginBottom: '4px', letterSpacing: '0.02em' }}>
+                    {article.title}
+                  </div>
+                  <div style={{ fontSize: '11px', letterSpacing: '2px', color: 'var(--muted)', opacity: 0.7 }}>
+                    {article.date}
+                    {article.tags && (
+                      <span style={{ marginLeft: '1rem' }}>{article.tags.join(' · ')}</span>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
       </div>
-    </div>
+    </main>
   )
 }

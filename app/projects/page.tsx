@@ -1,11 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { Cinzel, Lato } from 'next/font/google'
-import { BG, CREAM } from '../../lib/constants'
-
-const cinzel = Cinzel({ subsets: ['latin'], weight: '400' })
-const lato = Lato({ subsets: ['latin'], weight: '300' })
 
 const projects = [
   {
@@ -78,73 +73,80 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div
-      className={lato.className}
-      style={{ backgroundColor: BG, minHeight: '100vh', color: CREAM }}
-    >
-      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '3rem 2rem' }}>
-        <Link
-          href="/"
-          style={{
-            color: CREAM,
-            opacity: 0.5,
-            letterSpacing: '3px',
-            fontSize: '11px',
-            textDecoration: 'none',
-          }}
-        >
+    <main style={{
+      position: 'relative',
+      zIndex: 2,
+      minHeight: '100vh',
+      padding: '40px 24px 80px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '28px',
+    }}>
+      <div style={{ width: 'min(720px, 100%)' }}>
+
+        <Link href="/" style={{
+          color: 'var(--muted)',
+          fontSize: '11px',
+          letterSpacing: '3px',
+          textDecoration: 'none',
+          display: 'inline-block',
+          marginBottom: '28px',
+        }}>
           ← BACK
         </Link>
 
-        <h1
-          className={cinzel.className}
-          style={{
-            marginTop: '3rem',
-            marginBottom: '3rem',
+        <div className="glass-card">
+          <h1 style={{
+            margin: '0 0 28px',
+            fontSize: '13px',
             letterSpacing: '6px',
-            fontSize: '26px',
             fontWeight: 400,
-          }}
-        >
-          PROJECTS
-        </h1>
+            color: 'var(--text)',
+          }}>
+            PROJECTS
+          </h1>
 
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {projects.map((project, i) => (
-            <a
-              key={project.name}
-              href={project.url}
-              target="_blank"
-              style={{
-                color: CREAM,
-                textDecoration: 'none',
-                borderBottom: '1px solid rgba(242,234,216,0.1)',
-                padding: '1.5rem 0',
-                borderTop: i === 0 ? '1px solid rgba(242,234,216,0.1)' : 'none',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget.children[0] as HTMLElement).style.fontSize = '16px'
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget.children[0] as HTMLElement).style.fontSize = '14px'
-              }}
-            >
-              <div
-                className={cinzel.className}
-                style={{ letterSpacing: '2px', fontSize: '14px', marginBottom: '0.4rem', transition: 'font-size 0.2s ease' }}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {projects.map((project, i) => (
+              <a
+                key={project.name}
+                href={project.url}
+                target="_blank"
+                style={{
+                  color: 'var(--text)',
+                  textDecoration: 'none',
+                  padding: '1.25rem 0',
+                  borderTop: '1px solid rgba(36,50,58,0.08)',
+                  transition: 'padding-left 0.2s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.paddingLeft = '8px'
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.paddingLeft = '0'
+                }}
               >
-                {project.name}
-              </div>
-              <div style={{ opacity: 0.45, fontSize: '11px', letterSpacing: '2px', marginBottom: '0.5rem' }}>
-                {project.date}
-              </div>
-              <div style={{ opacity: 0.65, fontSize: '13px', lineHeight: 1.6 }}>
-                {project.desc}
-              </div>
-            </a>
-          ))}
+                <div style={{
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  marginBottom: '4px',
+                  letterSpacing: '0.02em',
+                }}>
+                  {project.name}
+                </div>
+                <div style={{ fontSize: '11px', letterSpacing: '2px', color: 'var(--muted)', marginBottom: '6px', opacity: 0.7 }}>
+                  {project.date}
+                </div>
+                <div style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--muted)' }}>
+                  {project.desc}
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
+
       </div>
-    </div>
+    </main>
   )
 }
