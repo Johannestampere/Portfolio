@@ -75,7 +75,7 @@ export default function Landing() {
             }}>
               <span>Honours Computer Science (AI specialization) @ <strong>University of Waterloo</strong></span>
               <span>Previous software engineer @ <strong>Delfi</strong> & <strong>ScamGuardian.ai</strong></span>
-              <span>Incoming @ <strong>Senpilot</strong> (Summer '26)</span>
+              <span>Incoming @ <strong>Senpilot</strong> (Summer &apos;26)</span>
               <span>Curious about math, ML, AI & system design</span>
             </div>
           </div>
