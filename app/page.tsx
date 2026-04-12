@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Linkedin, Instagram, Mail } from 'lucide-react'
+import { Linkedin, Instagram, Mail, Github } from 'lucide-react'
 
 export default function Landing() {
   return (
@@ -22,6 +22,9 @@ export default function Landing() {
         </a>
         <a href="https://www.instagram.com/johannes.tampere" target="_blank" style={{ color: 'var(--muted)', opacity: 0.6, transition: 'opacity 0.2s' }} onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = '1'} onMouseLeave={e => (e.currentTarget as HTMLElement).style.opacity = '0.6'}>
           <Instagram size={17} />
+        </a>
+        <a href="https://github.com/Johannestampere" target="_blank" style={{ color: 'var(--muted)', opacity: 0.6, transition: 'opacity 0.2s' }} onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = '1'} onMouseLeave={e => (e.currentTarget as HTMLElement).style.opacity = '0.6'}>
+          <Github size={17} />
         </a>
         <a href="mailto:jtampere@uwaterloo.ca" style={{ color: 'var(--muted)', opacity: 0.6, transition: 'opacity 0.2s' }} onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = '1'} onMouseLeave={e => (e.currentTarget as HTMLElement).style.opacity = '0.6'}>
           <Mail size={17} />
