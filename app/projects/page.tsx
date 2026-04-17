@@ -4,6 +4,12 @@ import Link from 'next/link'
 
 const projects = [
   {
+    name: 'Personal RAG Librarian',
+    date: 'April 2026',
+    desc: 'Personal RAG system over my book library.',
+    url: 'https://github.com/Johannestampere/librarian',
+  },
+  {
     name: 'PicCraft',
     date: 'February 2026',
     desc: 'Photo to 3D Minecraft voxelization pipeline using SAM, Depth Anything V2, and AI mesh generation.',
